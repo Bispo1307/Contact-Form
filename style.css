@@ -330,7 +330,7 @@ button:hover {
 
 .modal-success {
   width: 450px;
-  height: 110px;
+  height: 130px;
   position: fixed;
   top: 20px;
   left: 50%;
@@ -404,6 +404,7 @@ button:hover {
 
   .modal-success {
     width: 90%;
+    height: 110px;
     top: 40%;
   }
 }
