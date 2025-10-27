@@ -28,148 +28,71 @@ form.addEventListener("submit", (event) => {
 function checkForm() {
   let isValid = true;
 
-  //   FIRST NAME
-  const valueFirstName = inputFirstName.value.trim();
-
-  if (valueFirstName === "") {
-    const formItem = inputFirstName.parentElement;
-    formItem.classList.add("error");
+  if (
+    !checkFirstName() &&
+    !checkLastName() &&
+    !checkEmail() &&
+    !checkQuery() &&
+    !checkMessage() &&
+    !checkCheckbox()
+  ) {
     isValid = false;
-  } else {
-    const formItem = inputFirstName.parentElement;
-    formItem.classList.remove("error");
-    isValid = true;
-  }
-
-  //   LAST NAME
-  const valueLastName = inputLastName.value.trim();
-
-  if (valueLastName === "") {
-    const formItem = inputLastName.parentElement;
-    formItem.classList.add("error");
-    isValid = false;
-  } else {
-    const formItem = inputLastName.parentElement;
-    formItem.classList.remove("error");
-    isValid = true;
-  }
-
-  //   EMAIL
-  const valueEmail = inputEmail.value.trim();
-  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (valueEmail === "" || !regexEmail.test(valueEmail)) {
-    const formItem = inputEmail.parentElement;
-    formItem.classList.add("error");
-    isValid = false;
-  } else {
-    const formItem = inputEmail.parentElement;
-    formItem.classList.remove("error");
-    isValid = true;
-  }
-
-  //   RADIO
-  let isChecked = false;
-  radios.forEach((radio) => {
-    if (radio.checked) isChecked = true;
-  });
-
-  if (!isChecked) {
-    radioGroup.classList.add("error");
-    radioError.style.display = "block";
-    isValid = false;
-  } else {
-    radioGroup.classList.remove("error");
-    radioError.style.display = "none";
-    isValid = true;
-  }
-
-  //   MESSAGE
-  const valueTextArea = inputTextArea.value.trim();
-
-  if (valueTextArea === "") {
-    const formItem = inputTextArea.parentElement;
-    formItem.classList.add("error");
-    isValid = false;
-  } else {
-    const formItem = inputTextArea.parentElement;
-    formItem.classList.remove("error");
-    isValid = true;
-  }
-
-  //   CHECKBOX
-  if (!inputCheckbox.checked) {
-    const formItem = inputCheckbox.parentElement;
-    formItem.classList.add("error");
-    isValid = false;
-  } else {
-    const formItem = inputCheckbox.parentElement;
-    formItem.classList.remove("error");
-    isValid = true;
   }
 
   return isValid;
 }
 
-inputFirstName.addEventListener("blur", () => {
-  checkFirstName();
-});
+inputFirstName.addEventListener("input", checkFirstName);
 
 function checkFirstName() {
   const valueFirstName = inputFirstName.value.trim();
+  const formItem = inputFirstName.parentElement;
 
   if (valueFirstName === "") {
-    const formItem = inputFirstName.parentElement;
     formItem.classList.add("error");
+    return false;
   } else {
-    const formItem = inputFirstName.parentElement;
     formItem.classList.remove("error");
+    return true;
   }
 }
 
-inputLastName.addEventListener("blur", () => {
-  checkLastName();
-});
+inputLastName.addEventListener("input", checkLastName);
 
 function checkLastName() {
   const valueLastName = inputLastName.value.trim();
+  const formItem = inputLastName.parentElement;
 
   if (valueLastName === "") {
-    const formItem = inputLastName.parentElement;
     formItem.classList.add("error");
-    isValid = false;
+    return false;
   } else {
-    const formItem = inputLastName.parentElement;
     formItem.classList.remove("error");
-    isValid = true;
+    return true;
   }
 }
 
-inputEmail.addEventListener("input", () => {
-  checkEmail();
-});
+inputEmail.addEventListener("input", checkEmail);
 
 function checkEmail() {
   const valueEmail = inputEmail.value.trim();
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const formItem = inputEmail.parentElement;
 
   if (valueEmail === "" || !regexEmail.test(valueEmail)) {
-    const formItem = inputEmail.parentElement;
     formItem.classList.add("error");
-    isValid = false;
+    return false;
   } else {
-    const formItem = inputEmail.parentElement;
     formItem.classList.remove("error");
-    isValid = true;
+    return true;
   }
 }
 
-radioError.addEventListener("click", () => {
-  checkQuery();
-});
+radios.forEach((r) => r.addEventListener("change", checkQuery));
 
 function checkQuery() {
   let isChecked = false;
+
   radios.forEach((radio) => {
     if (radio.checked) isChecked = true;
   });
@@ -177,44 +100,38 @@ function checkQuery() {
   if (!isChecked) {
     radioGroup.classList.add("error");
     radioError.style.display = "block";
-    isValid = false;
+    return false;
   } else {
     radioGroup.classList.remove("error");
     radioError.style.display = "none";
-    isValid = true;
+    return true;
   }
 }
 
-inputTextArea.addEventListener("blur", () => {
-  checkMessage();
-});
+inputTextArea.addEventListener("input", checkMessage);
 
 function checkMessage() {
   const valueTextArea = inputTextArea.value.trim();
+  const formItem = inputTextArea.parentElement;
 
   if (valueTextArea === "") {
-    const formItem = inputTextArea.parentElement;
     formItem.classList.add("error");
-    isValid = false;
+    return false;
   } else {
-    const formItem = inputTextArea.parentElement;
     formItem.classList.remove("error");
-    isValid = true;
+    return true;
   }
 }
 
-inputCheckbox.addEventListener("blur", () => {
-  checkCheckbox();
-});
+inputCheckbox.addEventListener("change", checkCheckbox);
 
 function checkCheckbox() {
+  const formItem = inputCheckbox.parentElement;
   if (!inputCheckbox.checked) {
-    const formItem = inputCheckbox.parentElement;
     formItem.classList.add("error");
-    isValid = false;
+    return false;
   } else {
-    const formItem = inputCheckbox.parentElement;
     formItem.classList.remove("error");
-    isValid = true;
+    return true;
   }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,52 +13,52 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <title>Frontend Mentor | Contact Form</title>
+    <title>Frontend Mentor | Formulário de Contato</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h2>Contact Us</h2>
+        <h2>Contate-nos</h2>
       </header>
       <form id="form">
         <div class="input-field-name">
           <div class="form-control">
-            <label for="first-name">First Name <span>*</span> </label>
+            <label for="first-name">Primeiro nome <span>*</span> </label>
             <input id="first-name" type="text" />
-            <small>This field is required</small>
+            <small>Este campo é obrigatório</small>
           </div>
           <div class="form-control">
-            <label for="last-name">Last Name <span>*</span> </label>
+            <label for="last-name">Sobrenome <span>*</span> </label>
             <input id="last-name" type="text" />
-            <small>This field is required</small>
+            <small>Este campo é obrigatório</small>
           </div>
         </div>
         <div class="input-field-email">
           <div class="form-control">
-            <label for="email">Email Address <span>*</span> </label>
+            <label for="email">Endereço de email <span>*</span> </label>
             <input id="email" type="text" />
-            <small>Please enter a valid email address</small>
+            <small>Por favor, insira um endereço de e-mail válido.</small>
           </div>
         </div>
         <div class="input-field-query">
-          <label for="query">Query type <span>*</span></label>
+          <label for="query">Tipo de consulta <span>*</span></label>
           <div class="input-field">
             <div class="form-control">
               <input type="radio" name="query" />
-              <h4>General Enquiry</h4>
+              <h4>Inquérito Geral</h4>
             </div>
             <div class="form-control">
               <input type="radio" name="query" />
-              <h4>Support Request</h4>
+              <h4>Solicitação de suporte</h4>
             </div>
           </div>
-          <small>Please select a query type</small>
+          <small>Selecione um tipo de consulta</small>
         </div>
         <div class="input-field-message">
           <div class="form-control">
-            <label for="message">Message <span>*</span></label>
+            <label for="message">Mensagem <span>*</span></label>
             <textarea id="message"></textarea>
-            <small>The field is required</small>
+            <small>O campo é obrigatório</small>
           </div>
         </div>
         <div class="input-field-check">
@@ -66,24 +66,27 @@
             <div class="form-control">
               <input type="checkbox" id="check" />
               <label for="check"
-                >I consent to being contacted by the team <span>*</span></label
+                >Eu concordo em ser contatado pela equipe. <span>*</span></label
               >
             </div>
             <small
-              >To submit this form, please consent to being contacted</small
+              >Para enviar este formulário, por favor, concorde em ser
+              contactado.</small
             >
           </div>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Enviar</button>
       </form>
     </div>
     <div class="modal-success">
       <section class="header">
         <img src="assets/images/icon-success-check.svg" alt="Icon Success" />
-        <h4>Message Sent!</h4>
+        <h4>Mensagem enviada!</h4>
       </section>
       <section class="content">
-        <p>Thanks for completing the form. We'll be in touch soon!</p>
+        <p>
+          Obrigado por preencher o formulário. Entraremos em contato em breve!
+        </p>
       </section>
     </div>
   </body>
