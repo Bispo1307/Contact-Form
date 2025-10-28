@@ -23,7 +23,7 @@
       <form id="form">
         <div class="input-field-name">
           <div class="form-control">
-            <label for="first-name">Primeiro nome <span>*</span> </label>
+            <label for="first-name">Nome <span>*</span> </label>
             <input id="first-name" type="text" />
             <small>Este campo é obrigatório</small>
           </div>
@@ -41,15 +41,15 @@
           </div>
         </div>
         <div class="input-field-query">
-          <label for="query">Tipo de consulta <span>*</span></label>
+          <label>Tipo de consulta <span>*</span></label>
           <div class="input-field">
             <div class="form-control">
-              <input type="radio" name="query" />
-              <h4>Inquérito Geral</h4>
+              <input id="query-1" type="radio" name="query" />
+              <label for="query-1">Inquérito Geral</label>
             </div>
             <div class="form-control">
-              <input type="radio" name="query" />
-              <h4>Solicitação de suporte</h4>
+              <input id="query-2" type="radio" name="query" />
+              <label for="query-2">Solicitação de suporte</label>
             </div>
           </div>
           <small>Selecione um tipo de consulta</small>
@@ -66,7 +66,7 @@
             <div class="form-control">
               <input type="checkbox" id="check" />
               <label for="check"
-                >Eu concordo em ser contatado pela equipe. <span>*</span></label
+                >Concordo em ser contatado pela equipe. <span>*</span></label
               >
             </div>
             <small

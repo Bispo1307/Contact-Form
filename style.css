@@ -206,7 +206,7 @@ h2 {
   border: 2px solid var(--neutral-grey-500);
 }
 
-.input-field-query .input-field .form-control h4 {
+.input-field-query .input-field .form-control label {
   font-size: 16px;
   font-weight: 400;
 }
@@ -380,8 +380,8 @@ button:hover {
   .container {
     width: 100%;
     max-height: none;
-    padding: 20px;
-    border-radius: 16px;
+    padding: 24px 16px;
+    border-radius: 14px;
   }
 
   .input-field-name {
@@ -400,6 +400,10 @@ button:hover {
   .input-field-query .input-field {
     gap: 8px;
     flex-direction: column;
+  }
+
+  .input-field-check .input-field .form-control {
+    gap: 6px;
   }
 
   .modal-success {

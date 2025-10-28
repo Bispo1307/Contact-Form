@@ -14,7 +14,9 @@ form.addEventListener("submit", (event) => {
 
   const isValid = checkForm();
 
-  if (isValid) {
+  if (!isValid) {
+    modalSuccess.classList.remove("show");
+  } else {
     modalSuccess.classList.add("show");
 
     setTimeout(() => {
@@ -29,11 +31,11 @@ function checkForm() {
   let isValid = true;
 
   if (
-    !checkFirstName() &&
-    !checkLastName() &&
-    !checkEmail() &&
-    !checkQuery() &&
-    !checkMessage() &&
+    !checkFirstName() ||
+    !checkLastName() ||
+    !checkEmail() ||
+    !checkQuery() ||
+    !checkMessage() ||
     !checkCheckbox()
   ) {
     isValid = false;
